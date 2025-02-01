@@ -114,6 +114,54 @@ function clearAll() {
     document.getElementById('outputText').value = ''; // Clear output field
 }
 
+//password area 
 
+// 🔹 Global Variable to Store Real Password
+// 🔹 Global Variable to Store Real Password
+let fullPassword = "";
 
-    
+// 🔹 Password Check Function
+function checkPassword() {
+    let passwordInput = document.getElementById("passwordInput").value;
+    let errorMessage = document.getElementById("error-message");
+
+    if (fullPassword === "NTH_NOTHING") { 
+        document.getElementById("passwordScreen").style.display = "none";
+        document.getElementById("mainContent").classList.add("unlocked"); // Remove Blur
+    } else {
+        errorMessage.textContent = "❌ Incorrect Password!";
+    }
+}
+
+// 🔹 Toggle Password Visibility (Show/Hide Password)
+function togglePasswordVisibility() {
+    let passwordInput = document.getElementById("passwordInput");
+    let checkbox = document.getElementById("togglePassword");
+
+    if (checkbox.checked) {
+        passwordInput.type = "text";  // Show password
+        passwordInput.value = fullPassword; // Display actual password
+    } else {
+        passwordInput.type = "password";  // Hide password
+        maskPassword(); // Mask it again
+    }
+}
+
+// 🔹 Mask Password (Always Replace with Dots)
+function maskPassword() {
+    let input = document.getElementById("passwordInput");
+    let value = input.value;
+
+    if (value.length > fullPassword.length) {
+        fullPassword += value.slice(fullPassword.length); // Save new character
+    } else {
+        fullPassword = fullPassword.slice(0, value.length); // Handle backspace
+    }
+
+    // Mask all characters with "•" (dot)
+    let maskedValue = "•".repeat(fullPassword.length);
+    input.value = maskedValue;
+}
+
+// 🔹 Apply Masking on Input
+document.getElementById("passwordInput").addEventListener("input", maskPassword);
