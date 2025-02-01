@@ -1,38 +1,48 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NTH_Gange</title>
-    <link rel="icon" type="logo.png" href="favicon.png">
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <div class="container">
-        <h1>NTH Gange Secret Code Language</h1>
-       
-      
-       
-        <!-- Clear All Button with Class -->
-        <button class="clear" onclick="clearAll()">Clear All</button>
- 
-        <textarea id="inputText" placeholder="Enter your message"></textarea>
-            
-        <div class="buttons">
-            <!-- Encode Button -->
-            <button class="encode" onclick="encodeText()">Text to code</button>
-            <!-- Decode Button with Class -->
-            <button class="decode" onclick="decodeText()">Code to Text</button>
-            <!-- Paste Button with Class -->
-           
-        </div>
-    </div>
-        
-    <div class="output-section">
-        <textarea id="outputText" placeholder="Encoded/Decoded message" readonly></textarea>
-        <button class="copy-btn" onclick="copyText()">Copy</button>
-    </div>
+// 🔹 Global Variable to Store Real Password
+let fullPassword = "";
 
-    <script src="script.js"></script>
-</body>
-</html>
+// 🔹 Password Check Function
+function checkPassword() {
+    let passwordInput = document.getElementById("passwordInput").value;
+    let errorMessage = document.getElementById("error-message");
+
+    if (fullPassword === "admin123") { 
+        document.getElementById("passwordScreen").style.display = "none";
+        document.getElementById("mainContent").classList.add("unlocked"); // Remove Blur
+    } else {
+        errorMessage.textContent = "❌ Incorrect Password!";
+    }
+}
+
+// 🔹 Toggle Password Visibility (Show/Hide Password)
+function togglePasswordVisibility() {
+    let passwordInput = document.getElementById("passwordInput");
+    let checkbox = document.getElementById("togglePassword");
+
+    if (checkbox.checked) {
+        passwordInput.type = "text";  // Show password
+        passwordInput.value = fullPassword; // Display actual password
+    } else {
+        passwordInput.type = "password";  // Hide password
+        maskPassword(); // Mask it again
+    }
+}
+
+// 🔹 Mask Password (Always Replace with Dots)
+function maskPassword() {
+    let input = document.getElementById("passwordInput");
+    let value = input.value;
+
+    if (value.length > fullPassword.length) {
+        fullPassword += value.slice(fullPassword.length); // Save new character
+    } else {
+        fullPassword = fullPassword.slice(0, value.length); // Handle backspace
+    }
+
+    // Mask all characters with "•" (dot)
+    let maskedValue = "•".repeat(fullPassword.length);
+    input.value = maskedValue;
+}
+
+// 🔹 Apply Masking on Input
+document.getElementById("passwordInput").addEventListener("input", maskPassword);
