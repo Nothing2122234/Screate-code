@@ -7,34 +7,29 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
-    <!-- Password Screen -->
-    <div id="passwordScreen" class="password-screen">
-        <div class="password-box">
-            <h2>🔒 Secure Access</h2>
-            <input type="password" id="passwordInput" placeholder="Enter Password" oninput="maskFirstLetter()">
-            <div class="show-password">
-                <input type="checkbox" id="togglePassword" onclick="togglePasswordVisibility()"> 
-                <label for="togglePassword">Show Password</label>
-            </div>
-            <button onclick="checkPassword()">Unlock</button>
-            <p id="error-message" class="error-message"></p>
+    <div class="container">
+        <h1>NTH Gange Secret Code Language</h1>
+       
+       <br>
+       <br>
+        <!-- Clear All Button with Class -->
+        <button class="clear" onclick="clearAll()">Clear All</button>
+ 
+        <textarea id="inputText" placeholder="Enter your message"></textarea>
+            
+        <div class="buttons">
+            <!-- Encode Button -->
+            <button class="encode" onclick="encodeText()">Text to code</button>
+            <!-- Decode Button with Class -->
+            <button class="decode" onclick="decodeText()">Code to Text</button>
+            <!-- Paste Button with Class -->
+           
         </div>
     </div>
-
-    <!-- Main Website Content -->
-    <div class="container" id="mainContent">
-        <h1>NTH Gange Secret Code Language</h1>
-        <button class="clear" onclick="clearAll()">Clear All</button>
-        <textarea id="inputText" placeholder="Enter your message"></textarea>
-        <div class="buttons">
-            <button class="encode" onclick="encodeText()">Text to Code</button>
-            <button class="decode" onclick="decodeText()">Code to Text</button>
-        </div>
-        <div class="output-section">
-            <textarea id="outputText" placeholder="Encoded/Decoded message" readonly></textarea>
-            <button class="copy-btn" onclick="copyText()">Copy</button>
-        </div>
+        
+    <div class="output-section">
+        <textarea id="outputText" placeholder="Encoded/Decoded message" readonly></textarea>
+        <button class="copy-btn" onclick="copyText()">Copy</button>
     </div>
 
     <script src="script.js"></script>
