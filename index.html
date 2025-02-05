@@ -7,31 +7,23 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
+    
+   
+    <!-- Main Website Content -->
+    <div class="container" id="mainContent">
         <h1>NTH Gange Secret Code Language</h1>
-       
-       <br>
-       <br>
-        <!-- Clear All Button with Class -->
         <button class="clear" onclick="clearAll()">Clear All</button>
- 
         <textarea id="inputText" placeholder="Enter your message"></textarea>
-            
         <div class="buttons">
-            <!-- Encode Button -->
-            <button class="encode" onclick="encodeText()">Text to code</button>
-            <!-- Decode Button with Class -->
+            <button class="encode" onclick="encodeText()">Text to Code</button>
             <button class="decode" onclick="decodeText()">Code to Text</button>
-            <!-- Paste Button with Class -->
-           
+        </div>
+        <div class="output-section">
+            <textarea id="outputText" placeholder="Encoded/Decoded message" readonly></textarea>
+            <button class="copy-btn" onclick="copyText()">Copy</button>
         </div>
     </div>
-        
-    <div class="output-section">
-        <textarea id="outputText" placeholder="Encoded/Decoded message" readonly></textarea>
-        <button class="copy-btn" onclick="copyText()">Copy</button>
-    </div>
 
-    <script src="script.js"></script>
+    <script src="updated_script.js"></script>
 </body>
 </html>
