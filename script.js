@@ -114,9 +114,45 @@ function clearAll() {
     document.getElementById('outputText').value = ''; // Clear output field
 }
 
-//password area 
 
 
-
-
-    
+// Add Urdu alphabet mapping
+encodeMap["ا"] = 5000; decodeMap[5000] = "ا";
+encodeMap["ب"] = 5100; decodeMap[5100] = "ب";
+encodeMap["پ"] = 5200; decodeMap[5200] = "پ";
+encodeMap["ت"] = 5300; decodeMap[5300] = "ت";
+encodeMap["ٹ"] = 5400; decodeMap[5400] = "ٹ";
+encodeMap["ث"] = 5500; decodeMap[5500] = "ث";
+encodeMap["ج"] = 5600; decodeMap[5600] = "ج";
+encodeMap["چ"] = 5700; decodeMap[5700] = "چ";
+encodeMap["ح"] = 5800; decodeMap[5800] = "ح";
+encodeMap["خ"] = 5900; decodeMap[5900] = "خ";
+encodeMap["د"] = 6000; decodeMap[6000] = "د";
+encodeMap["ڈ"] = 6100; decodeMap[6100] = "ڈ";
+encodeMap["ذ"] = 6200; decodeMap[6200] = "ذ";
+encodeMap["ر"] = 6300; decodeMap[6300] = "ر";
+encodeMap["ڑ"] = 6400; decodeMap[6400] = "ڑ";
+encodeMap["ز"] = 6500; decodeMap[6500] = "ز";
+encodeMap["ژ"] = 6600; decodeMap[6600] = "ژ";
+encodeMap["س"] = 6700; decodeMap[6700] = "س";
+encodeMap["ش"] = 6800; decodeMap[6800] = "ش";
+encodeMap["ص"] = 6900; decodeMap[6900] = "ص";
+encodeMap["ض"] = 7000; decodeMap[7000] = "ض";
+encodeMap["ط"] = 7100; decodeMap[7100] = "ط";
+encodeMap["ظ"] = 7200; decodeMap[7200] = "ظ";
+encodeMap["ع"] = 7300; decodeMap[7300] = "ع";
+encodeMap["غ"] = 7400; decodeMap[7400] = "غ";
+encodeMap["ف"] = 7500; decodeMap[7500] = "ف";
+encodeMap["ق"] = 7600; decodeMap[7600] = "ق";
+encodeMap["ک"] = 7700; decodeMap[7700] = "ک";
+encodeMap["گ"] = 7800; decodeMap[7800] = "گ";
+encodeMap["ل"] = 7900; decodeMap[7900] = "ل";
+encodeMap["م"] = 8000; decodeMap[8000] = "م";
+encodeMap["ن"] = 8100; decodeMap[8100] = "ن";
+encodeMap["ں"] = 8200; decodeMap[8200] = "ں";
+encodeMap["و"] = 8300; decodeMap[8300] = "و";
+encodeMap["ہ"] = 8400; decodeMap[8400] = "ہ";
+encodeMap["ھ"] = 8500; decodeMap[8500] = "ھ";
+encodeMap["ء"] = 8600; decodeMap[8600] = "ء";
+encodeMap["ی"] = 8700; decodeMap[8700] = "ی";
+encodeMap["ے"] = 8800; decodeMap[8800] = "ے";
