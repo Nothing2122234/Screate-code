@@ -1,4 +1,4 @@
-stargazer// Encode aur Decode ke liye maps
+// Encode aur Decode ke liye maps
 const encodeMap = {};
 const decodeMap = {};
 
