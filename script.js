@@ -1,4 +1,4 @@
-// Encode aur Decode ke liye maps
+stargazer// Encode aur Decode ke liye maps
 const encodeMap = {};
 const decodeMap = {};
 
@@ -32,7 +32,7 @@ const specialChars = [
     'α', 'β', '^', '®', '©', '™', 'π', '¤', 'Φ', 'Π', 'Δ', '¦', '§', '°', '$', 
     '¥', '£', '=', '/', '₹', '-', '₦', '_', '—', '€', '<', '{', '[', '(', '>', 
     '>', '}', ')', '+', '-', '*', '!', '?', ':', ';', '"', "'", '#', '@', '!', 
-    '¿', '¡', '≈', '≠', '≥'
+    '¿', '¡', '≈', '≠', '≥', ','
 ];
 
 let specialCounter = 5000; // Starting point for special character codes
